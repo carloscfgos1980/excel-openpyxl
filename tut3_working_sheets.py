@@ -1,9 +1,9 @@
 import openpyxl
 
 # create a new workbook
-new_workbook = openpyxl.Workbook()
+new_workbook = openpyxl.Workbook()  # will automatically have a sheet
 
-# will automatically have a sheet
+# Add a sheet at the last position
 musical_sheet = new_workbook.create_sheet("Musicals")
 
 # Now we have 2 sheets: Sheet / Musicals
@@ -13,16 +13,16 @@ animation_sheet = new_workbook.create_sheet("Animations", 0)
 
 # Now we have 3 sheets: Animations / Sheet / Musicals
 
-# a worksheet at the penultime position
+# Add a worksheet at the penultime position
 comedy_sheet = new_workbook.create_sheet("Comedies", -1)
 
-# Now we have 4 sheets: Animations / Sheet / Animations / Musicals
+# Now we have 4 sheets: Animations / Sheet / Animations / Comedies / Musicals
 
 # change the name of workbook "Sheet"
 # [1] is because is worksheet "Sheet" is on the 2nd column
 new_workbook.worksheets[1].title = "Dramas"
 
-# add some info in each sheet
+# Add some info in each sheet
 animation_sheet["A1"] = "Up"
 comedy_sheet["A1"] = "Borat"
 # this one we didn't create a worksheet with the name. That is why we need to reference to the workbook

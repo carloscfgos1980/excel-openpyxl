@@ -1,7 +1,5 @@
 import openpyxl
 
-# open subjects-data book
-
 book = openpyxl.load_workbook("movies.xlsx")
 
 
